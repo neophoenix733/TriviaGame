@@ -7,7 +7,7 @@
 .jumbotron {
   box-sizing: border-box;
   height: 600px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color:#D0D0D0;
 }
 
 .main-button-container {
