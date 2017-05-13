@@ -8,10 +8,10 @@ function initialScreen() {
 
 initialScreen();
 
-//Create a function, generateHTML(), that is triggered by the start button, and generates the HTML seen on the project video...
+//Create a function, generateHTML...this will trigger the start button
 
 $("body").on("click", ".start-button", function(event){
-	event.preventDefault();  // added line to test issue on GitHub Viewer
+	event.preventDefault();  
 	clickSound.play();
 	generateHTML();
 
@@ -20,17 +20,14 @@ $("body").on("click", ".start-button", function(event){
 }); // Closes start-button click
 
 $("body").on("click", ".answer", function(event){
-	//answeredQuestion = true;
 	clickSound.play();
 	selectedAnswer = $(this).text();
 	if(selectedAnswer === correctAnswers[questionCounter]) {
-		//alert("correct");
 
 		clearInterval(theClock);
 		generateWin();
 	}
 	else {
-		//alert("wrong answer!");
 		clearInterval(theClock);
 		generateLoss();
 	}
@@ -47,21 +44,21 @@ function generateLossDueToTimeOut() {
 	unansweredTally++;
 	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>TIME'S UP!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='assets/images/loser.jpg'>";
 	$(".mainArea").html(gameHTML);
-	setTimeout(wait, 2000);  //  change to 4000 or other amount
+	setTimeout(wait, 2000);    
 }
 
 function generateWin() {
 	correctTally++;
 	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers[questionCounter] + "</p>" + imageArray[questionCounter];
 	$(".mainArea").html(gameHTML);
-	setTimeout(wait, 4000);  //  change to 4000 or other amount
+	setTimeout(wait, 4000);  // used to give the user more time to view results of a win  
 }
 
 function generateLoss() {
 	incorrectTally++;
 	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='assets/images/loser.jpg'>";
 	$(".mainArea").html(gameHTML);
-	setTimeout(wait, 2000); //  change to 4000 or other amount
+	setTimeout(wait, 2000); 
 }
 
 function generateHTML() {
