@@ -45,9 +45,9 @@ $("body").on("click", ".reset-button", function(event){
 
 function generateLossDueToTimeOut() {
 	unansweredTally++;
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>TIME'S UP!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='assets/images/loser.jpg'>";
 	$(".mainArea").html(gameHTML);
-	setTimeout(wait, 4000);  //  change to 4000 or other amount
+	setTimeout(wait, 2000);  //  change to 4000 or other amount
 }
 
 function generateWin() {
@@ -59,9 +59,9 @@ function generateWin() {
 
 function generateLoss() {
 	incorrectTally++;
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='assets/images/loser.jpg'>";
 	$(".mainArea").html(gameHTML);
-	setTimeout(wait, 4000); //  change to 4000 or other amount
+	setTimeout(wait, 2000); //  change to 4000 or other amount
 }
 
 function generateHTML() {
@@ -113,10 +113,10 @@ function resetGame() {
 var startScreen;
 var gameHTML;
 var counter = 30;
-var questionArray = ["What is the largest bone in the human body?", "How many bones are in the human body?", "What percentage of H2O is composed of the human body?", "How fast is the air speed of a cough on average?", "What is the function of the inferior vena cavae?", "How long does it take for a human toe nail take to grow from base to tip?", "Between which two trimesters approximately does a human fetus develop finger prints?", "How many strands of hair does a person lose on average in a day?"];
-var answerArray = [["Femur", "Humerus", "Phalange", "Darwin"], ["206","209","215","007"], ["Tainan City", "Taichung", "Taipei", "Hsinchu"], ["Kyoto","Hiroshima","Tokyo","Osaka"], ["Hong Kong", "Macau", "Shanghai", "Beijing"], ["Ankara","Istanbul","Antalya","Bursa"], ["Medellin", "Bogota", "Cartagena", "Cali"], ["Mumbai","Hyderabad","Bangalore","New Delhi"]];
-var imageArray = ["<img class='center-block img-right' src='img/australia.png'>", "<img class='center-block img-right' src='img/liberia.png'>", "<img class='center-block img-right' src='img/taiwan.png'>", "<img class='center-block img-right' src='img/japan.png'>", "<img class='center-block img-right' src='img/china.png'>", "<img class='center-block img-right' src='img/turkey.png'>", "<img class='center-block img-right' src='img/colombia.png'>", "<img class='center-block img-right' src='img/india.png'>"];
-var correctAnswers = ["A. Canberra", "B. Monrovia", "C. Taipei", "C. Tokyo", "D. Beijing", "A. Ankara", "B. Bogota", "D. New Delhi"];
+var questionArray = ["What is the largest bone in the human body?", "How many bones are in the human body?", "What approximate percentage of H2O is composed of the human body?", "How fast is the air speed of a cough on average?", "What is the function of the inferior vena cavae?", "How long does it take for a human toe nail take to grow from base to tip?", "Between which two trimesters approximately does a human fetus develop finger prints?", "How many strands of hair does a person lose on average in a day?"];
+var answerArray = [["Femur", "Humerus", "Phalange", "Darwin"], ["209","206","215","007"], ["20%", "90%", "70%", "40%"], ["10mph","20mph","40mph","60mph"], ["blood flow to aortic arch", "transport oxygenated blood to the common corotid artery", "Transport lymphatic fluid to the brain", "transport deoxygenated blood to the heart"], ["180 days","4 weeks","1 year","12 days"], ["first only", "first & second", "second & third", "fetus has no finger prints"], ["10","30-50","1,200","40-100"]];
+var imageArray = ["<img class='center-block img-right' src='assets/images/femur.jpg'>", "<img class='center-block img-right' src='assets/images/206.jpg'>", "<img class='center-block img-right' src='assets/images/70-percent.jpg'>", "<img class='center-block img-right' src='assets/images/cough-speed.jpg'>", "<img class='center-block img-right' src='assets/images/70-percent.jpg'>", "<img class='center-block img-right' src='assets/images/long-nails-style-funny.jpg'>", "<img class='center-block img-right' src='assets/images/baby-prints.jpg'>", "<img class='center-block img-right' src='assets/images/hair-loss.jpg'>"];
+var correctAnswers = ["A. Femur", "B. 206", "C. 70%", "C. 40mph", "D. transport deoxygenated blood to the heart", "A. 180 days", "B. first & second", "D. 40-100"];
 var questionCounter = 0;
 var selecterAnswer;
 var theClock;
